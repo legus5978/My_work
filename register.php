@@ -17,7 +17,7 @@ if (isset($_SESSION['user'])){
 
 <div class="form-container">
     <h2>Форма реєстрації</h2>
-    <form action="check.php" method="post">
+    <form action="check_reg.php" method="post">
         <div class="form-group">
             <label for="name">Ім'я:</label>
             <input type="text" id="name" name="name" required>
@@ -60,23 +60,6 @@ if (isset($_SESSION['user'])){
             echo '<p class="msg">'.$_SESSION['message'].'</p>';
             unset($_SESSION['message']);
         }
-        if (isset($_SESSION['pas_confirm'])){
-        echo '<p class="msg">'.$_SESSION['pas_confirm'].'</p>';
-        unset($_SESSION['pas_confirm']);
-        }
-        if (isset($_SESSION['err_email'])){
-            echo '<p class="msg">'.$_SESSION['err_email'].'</p>';
-            unset($_SESSION['err_email']);
-        }
-        if (isset($_SESSION['err_pas'])){
-            echo '<p class="msg">'.$_SESSION['err_pas'].'</p>';
-            unset($_SESSION['err_pas']);
-        }
-        if (isset($_SESSION['err_log'])){
-            echo '<p class="msg">'.$_SESSION['err_log'].'</p>';
-            unset($_SESSION['err_log']);
-        }
-
         ?>
 </div>
 </body>
