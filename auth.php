@@ -32,15 +32,6 @@ if (isset($_SESSION['user'])){
         echo '<p class="msg">'.$_SESSION['message'].'</p>';
         unset($_SESSION['message']);
     }
-    if (isset($_SESSION['message'])) {
-        echo '<p class="msg">' . $_SESSION['message'] . '</p>';
-        unset($_SESSION['message']);
-    }
-    if (isset($_SESSION['message'])) {
-        echo '<p class="msg">' . $_SESSION['message'] . '</p>';
-        unset($_SESSION['message']);
-    }
-
     ?>
 </div>
 </body>

@@ -1,22 +1,16 @@
 <?php
 session_start();
+require_once ('connect_db.php');
 
 if (!empty($_POST['password']) and !empty($_POST['login'])){
     $login = $_POST['login'];
     $password = $_POST['password'];
 
-    $host = 'localhost';
-    $user = 'root';
-    $pass = 'root';
-    $name = 'register-bd';
-    $link = mysqli_connect($host,$user,$pass,$name);
-    mysqli_query($link,"SET NAMES 'utf8'");
     $query = "SELECT users.*, statuses.name as status FROM users LEFT JOIN statuses ON users.id_status=statuses.id WHERE login = '$login'";
-    $result = mysqli_query($link,$query);
+    $result = mysqli_query($connect,$query);
     $user = mysqli_fetch_assoc($result);
 
     var_dump($user);
-
 
     if (!empty($user)){
         $hash = $user['password'];
